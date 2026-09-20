@@ -84,6 +84,7 @@
   const frameEl = document.getElementById("verse-frame");
   const imageEl = document.getElementById("verse-image");
   const captionEl = document.getElementById("verse-caption");
+  const chromeEl = document.getElementById("chrome");
   const printBtn = document.getElementById("print-btn");
 
   function dayOfYearInTimezone(date = new Date(), timeZone = TIMEZONE) {
@@ -185,7 +186,7 @@
     statusEl.textContent = message;
     statusEl.classList.add("is-error");
     frameEl.hidden = true;
-    printBtn.hidden = true;
+    chromeEl.hidden = true;
   }
 
   function showVerse(data) {
@@ -198,7 +199,7 @@
     imageEl.onload = () => {
       statusEl.hidden = true;
       frameEl.hidden = false;
-      printBtn.hidden = false;
+      chromeEl.hidden = false;
     };
 
     imageEl.onerror = () => {
