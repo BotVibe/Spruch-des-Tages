@@ -98,8 +98,8 @@ body {
   display: grid;
   place-items: center;
   cursor: pointer;
-  color: rgba(244, 241, 236, 0.55);
-  background: rgba(14, 17, 20, 0.35);
+  color: rgba(244, 241, 236, 0.72);
+  background: rgba(14, 17, 20, 0.45);
   backdrop-filter: blur(6px);
   transition: color 160ms ease, background 160ms ease, opacity 160ms ease;
 }
@@ -122,7 +122,7 @@ body {
 
 @media (hover: hover) {
   .print-btn {
-    opacity: 0.35;
+    opacity: 0.55;
   }
 
   .print-btn:hover,
