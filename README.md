@@ -2,7 +2,7 @@
 
 Fullscreen-Darstellung des aktuellen YouVersion-Verses des Tages (Deutsch, Hoffnung für alle) mit dem offiziellen Versbild. Unauffälliger Button zum Drucken auf A4 (hochkant).
 
-Die Seite ist **statisch** und läuft auf **GitHub Pages**. Der Browser holt den Tagesvers und das Share-Bild direkt von den öffentlichen YouVersion-APIs.
+Die Seite ist **statisch** und läuft auf **GitHub Pages**. Der Browser holt den Tagesvers und das Share-Bild direkt von den öffentlichen YouVersion-APIs — kein Node.js nötig.
 
 ## GitHub Pages
 
@@ -12,13 +12,13 @@ Die Seite ist **statisch** und läuft auf **GitHub Pages**. Der Browser holt den
 
 ## Lokale Vorschau
 
+Den Ordner [`public/`](public/) mit einem beliebigen Static-File-Server ausliefern, zum Beispiel:
+
 ```bash
-npm start
+python3 -m http.server 3000 --directory public
 ```
 
-Öffne anschließend [http://localhost:3000](http://localhost:3000).
-
-Alternativ reicht jeder Static-File-Server auf dem Ordner `public/`.
+Danach [http://localhost:3000](http://localhost:3000) öffnen. Alternativ nach dem Deploy einfach die GitHub-Pages-URL nutzen.
 
 ## Technik
 
