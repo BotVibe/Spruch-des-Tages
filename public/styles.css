@@ -1,0 +1,177 @@
+:root {
+  --bg: #0e1114;
+  --fg: #f4f1ec;
+  --muted: rgba(244, 241, 236, 0.55);
+  --print-ink: #111;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+    Georgia, serif;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.stage {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.status {
+  margin: 0;
+  max-width: 28rem;
+  text-align: center;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.status.is-error {
+  color: #e8b4b4;
+  animation: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.verse-frame {
+  margin: 0;
+  width: min(100%, 100dvh - 1.5rem, 92vw);
+  aspect-ratio: 1 / 1;
+  max-height: calc(100dvh - 1.5rem);
+}
+
+.verse-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.print-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: rgba(244, 241, 236, 0.55);
+  background: rgba(14, 17, 20, 0.35);
+  backdrop-filter: blur(6px);
+  transition: color 160ms ease, background 160ms ease, opacity 160ms ease;
+}
+
+.print-btn svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.print-btn:hover,
+.print-btn:focus-visible {
+  color: var(--fg);
+  background: rgba(14, 17, 20, 0.65);
+  outline: none;
+}
+
+.print-btn:focus-visible {
+  box-shadow: 0 0 0 2px rgba(244, 241, 236, 0.35);
+}
+
+@media (hover: hover) {
+  .print-btn {
+    opacity: 0.35;
+  }
+
+  .print-btn:hover,
+  .print-btn:focus-visible {
+    opacity: 1;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: var(--print-ink);
+    min-height: auto;
+  }
+
+  .status,
+  .print-btn {
+    display: none !important;
+  }
+
+  .stage {
+    min-height: auto;
+    height: 100%;
+    padding: 0;
+    place-items: center;
+  }
+
+  .verse-frame {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .verse-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 273mm;
+    object-fit: contain;
+    box-shadow: none;
+    background: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
