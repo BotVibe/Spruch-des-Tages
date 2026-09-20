@@ -21,21 +21,30 @@
       </figure>
     </main>
 
-    <button
-      type="button"
-      class="print-btn"
-      id="print-btn"
-      title="Auf A4 drucken"
-      aria-label="Auf A4 drucken"
-      hidden
-    >
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path
-          fill="currentColor"
-          d="M6 9V3h12v6h2a2 2 0 0 1 2 2v6h-4v4H6v-4H2v-6a2 2 0 0 1 2-2h2zm2-4v4h8V5H8zm0 12v2h8v-2H8zm-4-4h2v2H4v-2zm14 0h2v2h-2v-2z"
-        />
-      </svg>
-    </button>
+    <div class="chrome" id="chrome" hidden>
+      <a
+        class="source-link"
+        href="https://www.bible.com/de/verse-of-the-day"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        YouVersion
+      </a>
+      <button
+        type="button"
+        class="print-btn"
+        id="print-btn"
+        title="Auf A4 drucken"
+        aria-label="Auf A4 drucken"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M6 9V3h12v6h2a2 2 0 0 1 2 2v6h-4v4H6v-4H2v-6a2 2 0 0 1 2-2h2zm2-4v4h8V5H8zm0 12v2h8v-2H8zm-4-4h2v2H4v-2zm14 0h2v2h-2v-2z"
+          />
+        </svg>
+      </button>
+    </div>
 
     <script src="app.js" defer></script>
   </body>

@@ -85,34 +85,62 @@ body {
   box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
 }
 
-.print-btn {
+.chrome {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   z-index: 10;
-  width: 2.5rem;
-  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.35rem 0.4rem 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: rgba(244, 241, 236, 0.72);
+  background: rgba(14, 17, 20, 0.45);
+  backdrop-filter: blur(6px);
+  transition: opacity 160ms ease, background 160ms ease;
+}
+
+.source-link {
+  color: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.source-link:hover,
+.source-link:focus-visible {
+  color: var(--fg);
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.print-btn {
+  width: 2.15rem;
+  height: 2.15rem;
   border: 0;
   border-radius: 999px;
   padding: 0;
   display: grid;
   place-items: center;
   cursor: pointer;
-  color: rgba(244, 241, 236, 0.72);
-  background: rgba(14, 17, 20, 0.45);
-  backdrop-filter: blur(6px);
-  transition: color 160ms ease, background 160ms ease, opacity 160ms ease;
+  color: inherit;
+  background: transparent;
+  transition: color 160ms ease, background 160ms ease;
 }
 
 .print-btn svg {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 .print-btn:hover,
 .print-btn:focus-visible {
   color: var(--fg);
-  background: rgba(14, 17, 20, 0.65);
+  background: rgba(244, 241, 236, 0.1);
   outline: none;
 }
 
@@ -121,13 +149,14 @@ body {
 }
 
 @media (hover: hover) {
-  .print-btn {
+  .chrome {
     opacity: 0.55;
   }
 
-  .print-btn:hover,
-  .print-btn:focus-visible {
+  .chrome:hover,
+  .chrome:focus-within {
     opacity: 1;
+    background: rgba(14, 17, 20, 0.65);
   }
 }
 
@@ -145,7 +174,7 @@ body {
   }
 
   .status,
-  .print-btn {
+  .chrome {
     display: none !important;
   }
 
