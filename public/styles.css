@@ -160,7 +160,7 @@ body {
   }
 }
 
-.print-sources {
+.print-footer {
   display: none;
 }
 
@@ -182,14 +182,6 @@ body {
     display: none !important;
   }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8mm;
-  }
-
   .stage {
     min-height: auto;
     height: auto;
@@ -209,7 +201,7 @@ body {
   .verse-frame img {
     width: 100%;
     height: auto;
-    max-height: 240mm;
+    max-height: 250mm;
     object-fit: contain;
     box-shadow: none;
     background: transparent;
@@ -217,12 +209,12 @@ body {
     print-color-adjust: exact;
   }
 
-  .print-sources {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2mm;
-    width: 100%;
+  .print-footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0;
     padding: 0;
     font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -232,7 +224,7 @@ body {
     color: #333;
   }
 
-  .print-sources a {
+  .print-footer a {
     color: #333;
     text-decoration: underline;
     text-underline-offset: 0.12em;
