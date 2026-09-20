@@ -1,0 +1,13 @@
+{
+  "name": "spruch-des-tages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YouVersion Vers des Tages (deutsch) — statische GitHub-Pages-Seite",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
