@@ -1,0 +1,25 @@
+# Spruch des Tages behind the shared Caddy reverse proxy on the `web` network.
+# Static site (nginx); no env vars, no volumes, no uploads.
+# No host ports are published — TLS and routing live on the proxy.
+#
+#   docker network create web   # once, if it does not exist
+#   cd deploy && docker compose pull && docker compose up -d
+#
+# Point Caddy at container `spruch-des-tages:80`.
+
+services:
+  spruch-des-tages:
+    image: ghcr.io/botvibe/spruch-des-tages:main
+    container_name: spruch-des-tages
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

@@ -2,7 +2,7 @@
   "name": "spruch-des-tages",
   "version": "1.0.0",
   "private": true,
-  "description": "YouVersion Vers des Tages (deutsch) — statische GitHub-Pages-Seite",
+  "description": "YouVersion Vers des Tages (deutsch) — nginx/Docker auf vers.rosentreter.site",
   "type": "module",
   "scripts": {
     "test": "node --test"
